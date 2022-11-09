@@ -16,6 +16,7 @@ function addItem({}: Props) {
     "nft-collection",
   );
 
+  // Function to create / mint an NFT. 
   const mintNft = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 

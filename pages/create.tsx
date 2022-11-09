@@ -75,6 +75,7 @@ function Create({}: Props) {
 
     const { listingType, price } = target.elements;
 
+     // Function gets if a Direct listing is created.
     if (listingType.value === "directListing") {
       createDirectListing(
         {
@@ -97,6 +98,7 @@ function Create({}: Props) {
       );
     }
 
+    // Function gets if an Auction listing is created.
     if (listingType.value === "auctionListing") {
       createAuctionListing(
         {

@@ -56,6 +56,7 @@ function ListingPage() {
     if (listing.type === ListingType.Auction) {
       fetchMinBid();
     }
+
   }, [listingId, listing, contract]);
 
   console.log(minimumNextBid);
@@ -86,7 +87,10 @@ function ListingPage() {
     }
   };
 
+  // Function to buy a DirectListing NFT. 
   const buyNft = async () => {
+
+    // Check if the wallet is on the right network. 
     if (networkMismatch) {
       switchNetwork && switchNetwork(network);
       return;
@@ -111,6 +115,7 @@ function ListingPage() {
     })
   };
 
+  // Function to make an offer or place a bit for an Auction or an Offer. 
   const creatBidOrOffer = async () => {
     try {
       if (networkMismatch) {
@@ -189,6 +194,11 @@ function ListingPage() {
 
   return (
     <div>
+       <div><Toaster
+    position="top-center"
+      reverseOrder={false}
+/></div>
+
       <Header />
 
       <main className="max-w-6xl mx-auto p-2 flex flex-col lg:flex-row
